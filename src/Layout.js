@@ -15,9 +15,7 @@ import ListItemIcon from "@material-ui/core/ListItemIcon";
 import ListItemText from "@material-ui/core/ListItemText";
 import InboxIcon from "@material-ui/icons/MoveToInbox";
 import MailIcon from "@material-ui/icons/Mail";
-import {
-  Redirect
-} from "react-router-dom";
+import { Redirect } from "react-router-dom";
 
 const drawerWidth = 240;
 
@@ -109,12 +107,10 @@ class Layout extends React.Component {
 
   handleDrawerOpen = () => {
     this.setState({ open: true });
-    return ;
   };
 
   handleDrawerClose = () => {
     this.setState({ open: false });
-    return;
   };
 
   redirect = () => {
@@ -125,13 +121,10 @@ class Layout extends React.Component {
 
   setRedirect = link => {
     this.setState({ redirect: link });
-    return;
   };
 
   render() {
-    if(this.props){
-      const { classes } = this.props;
-    }
+    const {classes} = this.props
     const { open } = this.state;
     console.log(this.state.open);
     return (
