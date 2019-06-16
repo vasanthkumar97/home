@@ -1,16 +1,41 @@
-import React, { Component } from "react";
-import { hot } from "react-hot-loader/root";
-import HelloWorld from "./components/hello-world";
+import React from "react";
+import { HashRouter as Router, Route, Switch } from "react-router-dom";
+import Layout from "Layout";
 
-class App extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {};
-  }
+// const useStyles = makeStyles(theme => ({
+//   root: {
+//     display: "flex"
+//   }
+// }));
 
+// const classes = useStyles();
+
+const Index = () => {
+  return <div>Index</div>;
+};
+
+const About = () => {
+  return <div>about</div>;
+};
+
+const Users = () => {
+  return Users;
+};
+
+class App extends React.Component {
   render() {
-    return <HelloWorld title="Hello from the Co-Learning Lounge" />;
+    return (
+      <Router>
+        <Layout>
+          <Switch>
+            <Route path="/" exact component={Index} />
+            <Route path="/about/" component={About} />
+            <Route path="/xyz/" component={Users} />
+          </Switch>
+        </Layout>
+      </Router>
+    );
   }
 }
 
-export default hot(App);
+export default App;
